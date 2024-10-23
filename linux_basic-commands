@@ -1,0 +1,81 @@
+
+ubuntu@ip-172-31-4-82:~$ date
+Wed Oct 23 14:33:04 UTC 2024
+ubuntu@ip-172-31-4-82:~$ ls
+ubuntu@ip-172-31-4-82:~$ mkdir
+mkdir: missing operand
+Try 'mkdir --help' for more information.
+ubuntu@ip-172-31-4-82:~$ mkdir devops
+ubuntu@ip-172-31-4-82:~$ ls
+devops
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 4
+drwxrwxr-x 2 ubuntu ubuntu 4096 Oct 23 14:33 devops
+ubuntu@ip-172-31-4-82:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-4-82:~$ touch newfle.txt
+ubuntu@ip-172-31-4-82:~$ ls
+devops  newfle.txt
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 4
+drwxrwxr-x 2 ubuntu ubuntu 4096 Oct 23 14:33 devops
+-rw-rw-r-- 1 ubuntu ubuntu    0 Oct 23 14:34 newfle.txt
+ubuntu@ip-172-31-4-82:~$ mkdir cloud
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 8
+drwxrwxr-x 2 ubuntu ubuntu 4096 Oct 23 14:34 cloud
+drwxrwxr-x 2 ubuntu ubuntu 4096 Oct 23 14:33 devops
+-rw-rw-r-- 1 ubuntu ubuntu    0 Oct 23 14:34 newfle.txt
+
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 4
+drwxrwxr-x 2 ubuntu ubuntu 4096 Oct 23 14:33 devops
+-rw-rw-r-- 1 ubuntu ubuntu    0 Oct 23 14:34 newfle.txt
+ubuntu@ip-172-31-4-82:~$ mkdir cloud
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 8
+drwxrwxr-x 2 ubuntu ubuntu 4096 Oct 23 14:34 cloud
+drwxrwxr-x 2 ubuntu ubuntu 4096 Oct 23 14:33 devops
+-rw-rw-r-- 1 ubuntu ubuntu    0 Oct 23 14:34 newfle.txt
+ubuntu@ip-172-31-4-82:~$ cd devops
+ubuntu@ip-172-31-4-82:~/devops$ pwd
+/home/ubuntu/devops
+ubuntu@ip-172-31-4-82:~/devops$ cd ..
+ubuntu@ip-172-31-4-82:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-4-82:~$ cd ..
+ubuntu@ip-172-31-4-82:/home$ pwd
+/home
+ubuntu@ip-172-31-4-82:/home$ cd ..
+ubuntu@ip-172-31-4-82:/$ pwd
+/
+ubuntu@ip-172-31-4-82:/$ ls
+bin                boot  etc   lib                lib64       media  opt   root  sbin                snap  sys  usr
+bin.usr-is-merged  dev   home  lib.usr-is-merged  lost+found  mnt    proc  run   sbin.usr-is-merged  srv   tmp  var
+
+ubuntu@ip-172-31-4-82:~/devops$ ls
+ubuntu@ip-172-31-4-82:~/devops$ touch devopsfile.txt
+ubuntu@ip-172-31-4-82:~/devops$ ls
+devopsfile.txt
+ubuntu@ip-172-31-4-82:~/devops$ rm devopsfile.txt   ------> cmd to delete a file
+ubuntu@ip-172-31-4-82:~/devops$ ls
+ubuntu@ip-172-31-4-82:~/devops$ cd ..
+ubuntu@ip-172-31-4-82:~$ rm -r cloud/                -----> cmd to delete a directory
+ubuntu@ip-172-31-4-82:~$ ls
+devops  newfle.txt
+ubuntu@ip-172-31-4-82:~$ rmdir devops/               ------> cmd to delete diretory
+ubuntu@ip-172-31-4-82:~$ ls
+newfle.txt
+
+ubuntu@ip-172-31-4-82:~$ ls
+newfle.txt
+ubuntu@ip-172-31-4-82:~$ touch demofile.txt
+ubuntu@ip-172-31-4-82:~$ cat demofile.txt             ------> show the content of file
+ubuntu@ip-172-31-4-82:~$ echo "demofile.txt"          ------> display any message on screen
+demofile.txt
+ubuntu@ip-172-31-4-82:~$ echo "hello" > demofile.txt  ------> the hello word kept in the demofile.txt , in cat cmd if the file is not present then it creates a new file and placed the content inside it
+ubuntu@ip-172-31-4-82:~$ cat demofile.txt
+hello
+
+Note : zcat is used to zip file 
+
