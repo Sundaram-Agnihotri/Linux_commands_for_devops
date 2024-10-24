@@ -1,0 +1,89 @@
+note : cp -> used to copy a file from 1 folder to other
+
+ubuntu@ip-172-31-4-82:~$ ls
+demofile.txt  newfile.txt  newfle.txt  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ mkdir devops
+ubuntu@ip-172-31-4-82:~$ cp newfle.txt devops/
+ubuntu@ip-172-31-4-82:~$ ls
+demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cd devops
+ubuntu@ip-172-31-4-82:~/devops$ ls
+newfle.txt
+
+Note: copy one folder into another -> cp -r devops/ cloud/
+
+ubuntu@ip-172-31-4-82:~$ ls
+demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cp -r cloud/ devops/
+cp: cannot stat 'cloud/': No such file or directory
+ubuntu@ip-172-31-4-82:~$ mkdir cloud
+ubuntu@ip-172-31-4-82:~$ cp -r devops/ cloud/
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cd cloud
+ubuntu@ip-172-31-4-82:~/cloud$ ls
+devops
+ubuntu@ip-172-31-4-82:~/cloud$
+
+
+Note -> move file into other folder --> mv newfile.txt ../cloud/
+
+note -> rname a folder -->  mv devops/ linux_for_devops
+
+ubuntu@ip-172-31-4-82:~$ ls
+demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cp -r cloud/ devops/
+cp: cannot stat 'cloud/': No such file or directory
+ubuntu@ip-172-31-4-82:~$ mkdir cloud
+ubuntu@ip-172-31-4-82:~$ cp -r devops/ cloud/
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cd cloud
+ubuntu@ip-172-31-4-82:~/cloud$ ls
+devops
+ubuntu@ip-172-31-4-82:~/cloud$ cd devops
+ubuntu@ip-172-31-4-82:~/cloud/devops$ mv newfile.txt ../cloud/
+mv: cannot stat 'newfile.txt': No such file or directory
+ubuntu@ip-172-31-4-82:~/cloud/devops$ cd ..
+ubuntu@ip-172-31-4-82:~/cloud$ ls
+devops
+ubuntu@ip-172-31-4-82:~/cloud$ mv devops/ linux_for_devops
+ubuntu@ip-172-31-4-82:~/cloud$ ls
+linux_for_devops
+
+Note -> word count in file --> wc,it generatesoutput int the form line , words, size in bytes
+
+ubuntu@ip-172-31-4-82:~/cloud$ mv devops/ linux_for_devops
+ubuntu@ip-172-31-4-82:~/cloud$ ls
+linux_for_devops
+ubuntu@ip-172-31-4-82:~/cloud$ cd ..
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ wc newfile.txt
+1 1 8 newfile.txt
+
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ vi newfile.txt
+ubuntu@ip-172-31-4-82:~$ cat newfile.txt
+
+Invjkdfnvkjdfnbkjdb
+fdkjvbkjnfbkfbkjbnfd
+dfnbkfdbfdkjewfile
+ubuntu@ip-172-31-4-82:~$ sort newfile.txt
+
+Invjkdfnvkjdfnbkjdb
+dfnbkfdbfdkjewfile
+fdkjvbkjnfbkfbkjbnfd
+
+hardlink -> when the source file delete , but the copy of this not delete
+softlink -> when the source file delete , and the copy of this is also delete
+
+Note : port 22 pe ssh ka access hota hai
+yeh kaaam krta hai key pair ke upar jisme mere pass privatekey hai or cloud me public key hota hai use krta hai sshgen command on key generation ,server k paas public
+ key and mere pass private key
+
+
+
+
+
