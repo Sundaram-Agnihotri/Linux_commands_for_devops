@@ -1,0 +1,442 @@
+disk usage
+du -> for specific folder
+df -> disk stoage overall
+
+ubuntu@ip-172-31-4-82:~$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root        7034376 2089548   4928444  30% /
+tmpfs             490200       0    490200   0% /dev/shm
+tmpfs             196080     892    195188   1% /run
+tmpfs               5120       0      5120   0% /run/lock
+/dev/xvda16       901520   77020    761372  10% /boot
+/dev/xvda15       106832    6246    100586   6% /boot/efi
+tmpfs              98040      12     98028   1% /run/user/1000
+ubuntu@ip-172-31-4-82:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       6.8G  2.0G  4.8G  30% /
+tmpfs           479M     0  479M   0% /dev/shm
+tmpfs           192M  892K  191M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/xvda16     881M   76M  744M  10% /boot
+/dev/xvda15     105M  6.1M   99M   6% /boot/efi
+tmpfs            96M   12K   96M   1% /run/user/1000
+ubuntu@ip-172-31-4-82:~$ du
+4       ./cloud/linux_for_devops
+8       ./cloud
+4       ./devops
+8       ./.ssh
+4       ./.cache
+60      .
+ubuntu@ip-172-31-4-82:~$ du -v .
+du: invalid option -- 'v'
+Try 'du --help' for more information.
+ubuntu@ip-172-31-4-82:~$ du .
+4       ./cloud/linux_for_devops
+8       ./cloud
+4       ./devops
+8       ./.ssh
+4       ./.cache
+60      .
+ubuntu@ip-172-31-4-82:~$ ls -a
+.  ..  .bash_history  .bash_logout  .bashrc  .cache  .profile  .ssh  .viminfo  cloud  demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+
+
+processes  -> top
+ps ->  particular bash kis process pe chal rha hai
+
+fuser -> particular file k liye hota hai , yeh bahut ssare file storage k baare me batata hai
+
+
+ubuntu@ip-172-31-4-82:~$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root        7034376 2089548   4928444  30% /
+tmpfs             490200       0    490200   0% /dev/shm
+tmpfs             196080     892    195188   1% /run
+tmpfs               5120       0      5120   0% /run/lock
+/dev/xvda16       901520   77020    761372  10% /boot
+/dev/xvda15       106832    6246    100586   6% /boot/efi
+tmpfs              98040      12     98028   1% /run/user/1000
+ubuntu@ip-172-31-4-82:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       6.8G  2.0G  4.8G  30% /
+tmpfs           479M     0  479M   0% /dev/shm
+tmpfs           192M  892K  191M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/xvda16     881M   76M  744M  10% /boot
+/dev/xvda15     105M  6.1M   99M   6% /boot/efi
+tmpfs            96M   12K   96M   1% /run/user/1000
+ubuntu@ip-172-31-4-82:~$ du
+4       ./cloud/linux_for_devops
+8       ./cloud
+4       ./devops
+8       ./.ssh
+4       ./.cache
+60      .
+ubuntu@ip-172-31-4-82:~$ du -v .
+du: invalid option -- 'v'
+Try 'du --help' for more information.
+ubuntu@ip-172-31-4-82:~$ du .
+4       ./cloud/linux_for_devops
+8       ./cloud
+4       ./devops
+8       ./.ssh
+4       ./.cache
+60      .
+ubuntu@ip-172-31-4-82:~$ ls -a
+.  ..  .bash_history  .bash_logout  .bashrc  .cache  .profile  .ssh  .viminfo  cloud  demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ top
+top - 06:44:36 up 16:30,  2 users,  load average: 0.00, 0.00, 0.00
+Tasks: 105 total,   1 running, 104 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 89.8 id,  0.0 wa,  0.0 hi,  0.0 si, 10.2 st
+MiB Mem :    957.4 total,    101.6 free,    343.8 used,    669.9 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    613.6 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   5005 ubuntu    20   0   12372   5760   3584 R   0.3   0.6   0:00.03 top
+      1 root      20   0   22500  13748   9524 S   0.0   1.4   0:03.22 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_g
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_p
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri
+     12 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_pe
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread
+     15 root      20   0       0      0      0 S   0.0   0.0   0:00.14 ksoftirqd/0
+     16 root      20   0       0      0      0 I   0.0   0.0   0:00.22 rcu_sched
+     17 root      rt   0       0      0      0 S   0.0   0.0   0:00.39 migration/0
+     18 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     20 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs
+     21 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-inet_
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kauditd
+     24 root      20   0       0      0      0 S   0.0   0.0   0:00.01 khungtaskd
+     25 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper
+     27 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-write
+     28 root      20   0       0      0      0 S   0.0   0.0   0:01.84 kcompactd0
+     29 root      25   5       0      0      0 S   0.0   0.0   0:00.00 ksmd
+     30 root      39  19       0      0      0 S   0.0   0.0   0:00.00 khugepaged
+     31 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kinte
+     32 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kbloc
+     33 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-blkcg
+     34 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/9-acpi
+     35 root      20   0       0      0      0 S   0.0   0.0   0:00.00 xen-balloon
+     36 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-tpm_d
+     37 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-ata_s
+     38 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-md
+     39 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-md_bi
+     40 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-edac-
+     41 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-devfr
+ubuntu@ip-172-31-4-82:~$ ps
+    PID TTY          TIME CMD
+   4987 pts/1    00:00:00 bash
+   5007 pts/1    00:00:00 ps
+ubuntu@ip-172-31-4-82:~$ fuser
+No process specification given
+Usage: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE]
+             [-k [-i] [-SIGNAL]] NAME...
+       fuser -l
+       fuser -V
+Show which processes use the named files, sockets, or filesystems.
+
+  -a,--all              display unused files too
+  -i,--interactive      ask before killing (ignored without -k)
+  -I,--inode            use always inodes to compare files
+  -k,--kill             kill processes accessing the named file
+  -l,--list-signals     list available signal names
+  -m,--mount            show all processes using the named filesystems or
+                        block device
+  -M,--ismountpoint     fulfill request only if NAME is a mount point
+  -n,--namespace SPACE  search in this name space (file, udp, or tcp)
+  -s,--silent           silent operation
+  -SIGNAL               send this signal instead of SIGKILL
+  -u,--user             display user IDs
+  -v,--verbose          verbose output
+  -w,--writeonly        kill only processes with write access
+  -V,--version          display version information
+  -4,--ipv4             search IPv4 sockets only
+  -6,--ipv6             search IPv6 sockets only
+  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]
+
+ubuntu@ip-172-31-4-82:~$ fuser .
+/home/ubuntu:         4880c  4987c
+ubuntu@ip-172-31-4-82:~$ ubuntu@ip-172-31-4-82:~$ df
+ks    Used Available Use% Mounted on
+/dev/root        7034376 2089548   4928444  30% /
+tmpfs             490200       0    490200   0% /dev/shm
+tmpfs             196080     892    195188   1% /run
+tmpfs               5120       0      5120   0% /run/lock
+/dev/xvda16       901520   77020    761372  10% /boot
+/dev/xvda15       106832    6246    100586   6% /boot/efi
+tmpfs              98040      12     98028   1% /run/user/1000
+ubuntu@ip-172-31-4-82:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       6.8G  2.0G  4.8G  30% /
+tmpfs           479M     0  479M   0% /dev/shm
+tmpfs           192M  892K  191M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/xvda16     881M   76M  744M  10% /boot
+/dev/xvda15     105M  6.1M   99M   6% /boot/efi
+tmpfs            96M   12K   96M   1% /run/user/1000
+ubuntu@ip-172-31-4-82:~$ du
+4       ./cloud/linux_for_devops
+8       ./cloud
+4       ./devops
+8       ./.ssh
+4       ./.cache
+60      .
+ubuntu@ip-172-31-4-82:~$ du -v .
+du: invalid option -- 'v'
+Try 'du --help' for more information.
+ubuntu@ip-172-31-4-82:~$ du .
+4       ./cloud/linux_for_devops
+8       ./cloud
+4       ./devops
+8       ./.ssh
+4       ./.cache
+60      .
+ubuntu@ip-172-31-4-82:~$ ls -a
+.  ..  .bash_history  .bash_logout  .bashrc  .cache  .profile  .ssh  .viminfo  cloud  demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txtubuntu@ip-172-31-4-82:~$: command not found
+ubuntu@ip-172-31-4-82:~$ Filesystem     1K-blocks    Used Available Use% Mounted on
+Filesystem: command not found
+ubuntu@ip-172-31-4-82:~$ /dev/root        7034376 2089548   4928444  30% /
+-bash: /dev/root: Permission denied
+ubuntu@ip-172-31-4-82:~$ tmpfs             490200       0    490200   0% /dev/shm
+Command 'tmpfs' not found, did you mean:
+  command 'tmfs' from deb tmfs (3-2build12)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-4-82:~$ tmpfs             196080     892    195188   1% /run
+Command 'tmpfs' not found, did you mean:
+  command 'tmfs' from deb tmfs (3-2build12)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-4-82:~$ tmpfs               5120       0      5120   0% /run/lock
+Command 'tmpfs' not found, did you mean:
+  command 'tmfs' from deb tmfs (3-2build12)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-4-82:~$ /dev/xvda16       901520   77020    761372  10% /boot
+-bash: /dev/xvda16: Permission denied
+ubuntu@ip-172-31-4-82:~$ /dev/xvda15       106832    6246    100586   6% /boot/efi
+-bash: /dev/xvda15: Permission denied
+ubuntu@ip-172-31-4-82:~$ tmpfs              98040      12     98028   1% /run/user/1000
+Command 'tmpfs' not found, did you mean:
+  command 'tmfs' from deb tmfs (3-2build12)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-4-82:~$ ubuntu@ip-172-31-4-82:~$ df -h
+ubuntu@ip-172-31-4-82:~$: command not found
+ubuntu@ip-172-31-4-82:~$ Filesystem      Size  Used Avail Use% Mounted on
+Filesystem: command not found
+ubuntu@ip-172-31-4-82:~$ /dev/root       6.8G  2.0G  4.8G  30% /
+-bash: /dev/root: Permission denied
+ubuntu@ip-172-31-4-82:~$ tmpfs           479M     0  479M   0% /dev/shm
+Command 'tmpfs' not found, did you mean:
+  command 'tmfs' from deb tmfs (3-2build12)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-4-82:~$ tmpfs           192M  892K  191M   1% /run
+Command 'tmpfs' not found, did you mean:
+  command 'tmfs' from deb tmfs (3-2build12)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-4-82:~$ tmpfs           5.0M     0  5.0M   0% /run/lock
+Command 'tmpfs' not found, did you mean:
+  command 'tmfs' from deb tmfs (3-2build12)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-4-82:~$ /dev/xvda16     881M   76M  744M  10% /boot
+-bash: /dev/xvda16: Permission denied
+ubuntu@ip-172-31-4-82:~$ /dev/xvda15     105M  6.1M   99M   6% /boot/efi
+-bash: /dev/xvda15: Permission denied
+ubuntu@ip-172-31-4-82:~$ tmpfs            96M   12K   96M   1% /run/user/1000
+Command 'tmpfs' not found, did you mean:
+  command 'tmfs' from deb tmfs (3-2build12)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-4-82:~$ ubuntu@ip-172-31-4-82:~$ du
+ubuntu@ip-172-31-4-82:~$: command not found
+ubuntu@ip-172-31-4-82:~$ 4       ./cloud/linux_for_devops
+4: command not found
+ubuntu@ip-172-31-4-82:~$ 8       ./cloud
+8: command not found
+ubuntu@ip-172-31-4-82:~$ 4       ./devops
+4: command not found
+ubuntu@ip-172-31-4-82:~$ 8       ./.ssh
+8: command not found
+ubuntu@ip-172-31-4-82:~$ 4       ./.cache
+4: command not found
+ubuntu@ip-172-31-4-82:~$ 60      .
+60: command not found
+ubuntu@ip-172-31-4-82:~$ ubuntu@ip-172-31-4-82:~$ du -v .
+ubuntu@ip-172-31-4-82:~$: command not found
+ubuntu@ip-172-31-4-82:~$ du: invalid option -- 'v'
+Command 'du:' not found, did you mean:
+  command 'dub' from snap dub (1.19.0)
+  command 'duf' from deb duf (0.8.1-1ubuntu0.24.04.1)
+  command 'du' from deb coreutils (9.4-2ubuntu2)
+  command 'due' from deb due (3.0.0-1)
+  command 'duc' from deb duc (1.4.5-1)
+  command 'duc' from deb duc-nox (1.4.5-1)
+  command 'dub' from deb dub (1.34.0-1)
+  command 'duk' from deb duktape (2.7.0+tests-0ubuntu2)
+See 'snap info <snapname>' for additional versions.
+ubuntu@ip-172-31-4-82:~$ Try 'du --help' for more information.
+Command 'Try' not found, did you mean:
+  command 'pry' from deb pry (0.14.2-1)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-4-82:~$ ubuntu@ip-172-31-4-82:~$ du .
+ubuntu@ip-172-31-4-82:~$: command not found
+ubuntu@ip-172-31-4-82:~$ 4       ./cloud/linux_for_devops
+4: command not found
+ubuntu@ip-172-31-4-82:~$ 8       ./cloud
+8: command not found
+ubuntu@ip-172-31-4-82:~$ 4       ./devops
+4: command not found
+ubuntu@ip-172-31-4-82:~$ 8       ./.ssh
+8: command not found
+ubuntu@ip-172-31-4-82:~$ 4       ./.cache
+4: command not found
+ubuntu@ip-172-31-4-82:~$ 60      .
+60: command not found
+ubuntu@ip-172-31-4-82:~$ ubuntu@ip-172-31-4-82:~$ ls -a
+ubuntu@ip-172-31-4-82:~$: command not found
+ubuntu@ip-172-31-4-82:~$ .  ..  .bash_history  .bash_logout  .bashrc  .cache  .profile  .ssh  .viminfo  cloud  demofile.txt  devops  newfile.txt  newfle.txt  tempfile.txt
+-bash: .: ..: is a directory
+ubuntu@ip-172-31-4-82:~$
+ubuntu@ip-172-31-4-82:~$
+ubuntu@ip-172-31-4-82:~$
+ubuntu@ip-172-31-4-82:~$
+ubuntu@ip-172-31-4-82:~$ free
+               total        used        free      shared  buff/cache   available
+Mem:          980400      351404      103268         904      687624      628996
+Swap:              0           0           0
+ubuntu@ip-172-31-4-82:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           957Mi       343Mi       100Mi       904Ki       671Mi       614Mi
+Swap:             0B          0B          0B
+
+nohup -> log ko file me store kr lo,  by default yeh ekk file bana dega nohup.h or uske andar file bana dega
+vmstat -> all information about virtual memory
+
+ubuntu@ip-172-31-4-82:~$ nohup df -h
+nohup: ignoring input and appending output to 'nohup.out'
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
+ 2  0      0 280624  18108 463260    0    0    10    34   32    0  0  0 92  0  8  0
+ubuntu@ip-172-31-4-82:~$ vmstat -a
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd   free  inact active   si   so    bi    bo   in   cs us sy id wa st gu
+ 2  0      0 280624 342764 140640    0    0    10    34   32    0  0  0 92  0  8  0
+
+
+
+System level commands
+paltform -> uname
+kitni deer se chlraha hai system in uk time -> uptime
+who -> ekk hee user milta hai
+whoami -> multiple user with their time of logging
+
+which -> location of file / commands and libraray where it is stored
+id- > see the groupid
+sudo ->  root user (super user do)
+sudo ekk group
+iss group pe permission hai sbb kuch krne ka
+
+cat /etc/passwd -> give list of users
+
+
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ uname
+Linux
+ubuntu@ip-172-31-4-82:~$ uptime
+ 07:08:49 up 16:54,  2 users,  load average: 0.00, 0.00, 0.00
+ubuntu@ip-172-31-4-82:~$ date
+Thu Oct 24 07:09:06 UTC 2024
+ubuntu@ip-172-31-4-82:~$ who
+ubuntu   pts/0        2024-10-24 06:21 (103.46.203.59)
+ubuntu   pts/1        2024-10-24 06:41 (103.46.203.59)
+ubuntu@ip-172-31-4-82:~$ whoami
+ubuntu
+ubuntu@ip-172-31-4-82:~$ which
+ubuntu@ip-172-31-4-82:~$ where bash
+where: command not found
+ubuntu@ip-172-31-4-82:~$ which bash
+/usr/bin/bash
+ubuntu@ip-172-31-4-82:~$ which python
+ubuntu@ip-172-31-4-82:~$ which java
+ubuntu@ip-172-31-4-82:~$ which cp
+/usr/bin/cp
+ubuntu@ip-172-31-4-82:~$ id
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),24(cdrom),27(sudo),30(dip),105(lxd)
+ubuntu@ip-172-31-4-82:~$ id -a
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),24(cdrom),27(sudo),30(dip),105(lxd)
+ubuntu@ip-172-31-4-82:~$ cd /stc/
+-bash: cd: /stc/: No such file or directory
+ubuntu@ip-172-31-4-82:~$ cd /etc/
+ubuntu@ip-172-31-4-82:/etc$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+systemd-timesync:x:996:996:systemd Time Synchronization:/:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
+messagebus:x:101:101::/nonexistent:/usr/sbin/nologin
+syslog:x:102:102::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:991:991:systemd Resolver:/:/usr/sbin/nologin
+uuidd:x:103:103::/run/uuidd:/usr/sbin/nologin
+tss:x:104:104:TPM software stack,,,:/var/lib/tpm:/bin/false
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+pollinate:x:106:1::/var/cache/pollinate:/bin/false
+tcpdump:x:107:108::/nonexistent:/usr/sbin/nologin
+landscape:x:108:109::/var/lib/landscape:/usr/sbin/nologin
+fwupd-refresh:x:990:990:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+polkitd:x:989:989:User for polkitd:/:/usr/sbin/nologin
+ec2-instance-connect:x:109:65534::/nonexistent:/usr/sbin/nologin
+_chrony:x:110:112:Chrony daemon,,,:/var/lib/chrony:/usr/sbin/nologin
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+ubuntu@ip-172-31-4-82:/etc$ cd root
+-bash: cd: root: No such file or directory
+ubuntu@ip-172-31-4-82:/etc$ shutdown
+
+
+sudo shutdown -> to shutdown the system
+sudo reboot -> to restart the system
+apt -> application package manager , to install anything in our system
+sudo apt-get install docker.io -> used to install doker from internet
+sudo apt -get update -> system update
+
+
+control -r -> used to revers search the commands
+
+Other package managers are :
+1 : yum -> for centos
+2 : dnf -> fedora
+3 : portage ->  chromeos ,gentoolinux
+4 : rpm -> redhat
+
+
+
+
+
+
+
+
+
+
