@@ -1,0 +1,461 @@
+user and group management commands
+
+useradd -m -> creating a folder and add into home section
+user ko passwd bhi mile -> s
+
+ntu@ip-172-31-4-82:~$ useradd -m jethalal
+useradd: Permission denied.
+useradd: cannot lock /etc/passwd; try again later.
+ubuntu@ip-172-31-4-82:~$ sudo useradd -m jethalal
+ubuntu@ip-172-31-4-82:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cd ..
+ubuntu@ip-172-31-4-82:/home$ ls
+jethalal  ubuntu
+ubuntu@ip-172-31-4-82:/home$ sudo passwd jethalal
+New password:
+Retype new password:
+passwd: password updated successfully
+ubuntu@ip-172-31-4-82:/home$ ls
+jethalal  ubuntu
+ubuntu@ip-172-31-4-82:/home$ whoami
+ubuntu
+ubuntu@ip-172-31-4-82:/home$ su jethalal
+Password:
+$ whoami
+jethalal
+$ ls
+jethalal  ubuntu
+$ cd jethalal
+$ whoami
+jethalal
+$ exit
+ubuntu@ip-172-31-4-82:/home$ whoami
+ubuntu
+ubuntu@ip-172-31-4-82:/home$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+systemd-timesync:x:996:996:systemd Time Synchronization:/:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
+messagebus:x:101:101::/nonexistent:/usr/sbin/nologin
+syslog:x:102:102::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:991:991:systemd Resolver:/:/usr/sbin/nologin
+uuidd:x:103:103::/run/uuidd:/usr/sbin/nologin
+tss:x:104:104:TPM software stack,,,:/var/lib/tpm:/bin/false
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+pollinate:x:106:1::/var/cache/pollinate:/bin/false
+tcpdump:x:107:108::/nonexistent:/usr/sbin/nologin
+landscape:x:108:109::/var/lib/landscape:/usr/sbin/nologin
+fwupd-refresh:x:990:990:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+polkitd:x:989:989:User for polkitd:/:/usr/sbin/nologin
+ec2-instance-connect:x:109:65534::/nonexistent:/usr/sbin/nologin
+_chrony:x:110:112:Chrony daemon,,,:/var/lib/chrony:/usr/sbin/nologin
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+dnsmasq:x:999:65534:dnsmasq:/var/lib/misc:/usr/sbin/nologin
+jethalal:x:1001:1001::/home/jethalal:/bin/sh
+ubuntu@ip-172-31-4-82:/home$ su jethalal
+Password:
+$ exit
+ubuntu@ip-172-31-4-82:/home$ cd ubuntu
+ubuntu@ip-172-31-4-82:~$ sudo userdel jethalal
+ubuntu@ip-172-31-4-82:~$ su jethalal
+su: user jethalal does not exist or the user entry does not contain all the required fields
+ubuntu@ip-172-31-4-82:~$ sudo useradd jethalal
+ubuntu@ip-172-31-4-82:~$ sudo useradd rahul
+ubuntu@ip-172-31-4-82:~$ sudo useradd rohan
+ubuntu@ip-172-31-4-82:~$ sudo useradd ravi
+ubuntu@ip-172-31-4-82:~$ sudo groupadd devops
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ubuntu
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ubuntu
+floppy:x:25:
+tape:x:26:
+sudo:x:27:ubuntu
+audio:x:29:
+dip:x:30:ubuntu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+systemd-timesync:x:996:
+input:x:995:
+sgx:x:994:
+kvm:x:993:
+render:x:992:
+messagebus:x:101:
+syslog:x:102:
+systemd-resolve:x:991:
+uuidd:x:103:
+tss:x:104:
+lxd:x:105:ubuntu
+_ssh:x:106:
+rdma:x:107:
+tcpdump:x:108:
+landscape:x:109:
+fwupd-refresh:x:990:
+polkitd:x:989:
+admin:x:110:
+netdev:x:111:
+_chrony:x:112:
+ubuntu:x:1000:
+docker:x:113:
+jethalal:x:1001:
+rahul:x:1002:
+rohan:x:1003:
+ravi:x:1004:
+devops:x:1005:
+ubuntu@ip-172-31-4-82:~$ sudo groupadd tester
+ubuntu@ip-172-31-4-82:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ubuntu
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ubuntu
+floppy:x:25:
+tape:x:26:
+sudo:x:27:ubuntu
+audio:x:29:
+dip:x:30:ubuntu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+systemd-timesync:x:996:
+input:x:995:
+sgx:x:994:
+kvm:x:993:
+render:x:992:
+messagebus:x:101:
+syslog:x:102:
+systemd-resolve:x:991:
+uuidd:x:103:
+tss:x:104:
+lxd:x:105:ubuntu
+_ssh:x:106:
+rdma:x:107:
+tcpdump:x:108:
+landscape:x:109:
+fwupd-refresh:x:990:
+polkitd:x:989:
+admin:x:110:
+netdev:x:111:
+_chrony:x:112:
+ubuntu:x:1000:
+docker:x:113:
+jethalal:x:1001:
+rahul:x:1002:
+rohan:x:1003:
+ravi:x:1004:
+devops:x:1005:
+tester:x:1006:
+ubuntu@ip-172-31-4-82:~$ sudo gpasswd jethalal devops
+Usage: gpasswd [option] GROUP
+
+Options:
+  -a, --add USER                add USER to GROUP
+  -d, --delete USER             remove USER from GROUP
+  -h, --help                    display this help message and exit
+  -Q, --root CHROOT_DIR         directory to chroot into
+  -r, --remove-password         remove the GROUP's password
+  -R, --restrict                restrict access to GROUP to its members
+  -M, --members USER,...        set the list of members of GROUP
+      --extrausers              use the extra users database
+  -A, --administrators ADMIN,...
+                                set the list of administrators for GROUP
+Except for the -A and -M options, the options cannot be combined.
+ubuntu@ip-172-31-4-82:~$ sudo gpasswd -a jethalal devops
+Adding user jethalal to group devops
+ubuntu@ip-172-31-4-82:~$ sudo gpasswd -a rahul devops
+Adding user rahul to group devops
+ubuntu@ip-172-31-4-82:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ubuntu
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ubuntu
+floppy:x:25:
+tape:x:26:
+sudo:x:27:ubuntu
+audio:x:29:
+dip:x:30:ubuntu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+systemd-timesync:x:996:
+input:x:995:
+sgx:x:994:
+kvm:x:993:
+render:x:992:
+messagebus:x:101:
+syslog:x:102:
+systemd-resolve:x:991:
+uuidd:x:103:
+tss:x:104:
+lxd:x:105:ubuntu
+_ssh:x:106:
+rdma:x:107:
+tcpdump:x:108:
+landscape:x:109:
+fwupd-refresh:x:990:
+polkitd:x:989:
+admin:x:110:
+netdev:x:111:
+_chrony:x:112:
+ubuntu:x:1000:
+docker:x:113:
+jethalal:x:1001:
+rahul:x:1002:
+rohan:x:1003:
+ravi:x:1004:
+devops:x:1005:jethalal,rahul
+tester:x:1006:
+ubuntu@ip-172-31-4-82:~$ sudo gpasswd -a ravi tester
+Adding user ravi to group tester
+ubuntu@ip-172-31-4-82:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ubuntu
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ubuntu
+floppy:x:25:
+tape:x:26:
+sudo:x:27:ubuntu
+audio:x:29:
+dip:x:30:ubuntu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+systemd-timesync:x:996:
+input:x:995:
+sgx:x:994:
+kvm:x:993:
+render:x:992:
+messagebus:x:101:
+syslog:x:102:
+systemd-resolve:x:991:
+uuidd:x:103:
+tss:x:104:
+lxd:x:105:ubuntu
+_ssh:x:106:
+rdma:x:107:
+tcpdump:x:108:
+landscape:x:109:
+fwupd-refresh:x:990:
+polkitd:x:989:
+admin:x:110:
+netdev:x:111:
+_chrony:x:112:
+ubuntu:x:1000:
+docker:x:113:
+jethalal:x:1001:
+rahul:x:1002:
+rohan:x:1003:
+ravi:x:1004:
+devops:x:1005:jethalal,rahul
+tester:x:1006:ravi
+ubuntu@ip-172-31-4-82:~$ id
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),24(cdrom),27(sudo),30(dip),105(lxd)
+ubuntu@ip-172-31-4-82:~$ sudo groupdel tester
+ubuntu@ip-172-31-4-82:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ubuntu
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ubuntu
+floppy:x:25:
+tape:x:26:
+sudo:x:27:ubuntu
+audio:x:29:
+dip:x:30:ubuntu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+systemd-timesync:x:996:
+input:x:995:
+sgx:x:994:
+kvm:x:993:
+render:x:992:
+messagebus:x:101:
+syslog:x:102:
+systemd-resolve:x:991:
+uuidd:x:103:
+tss:x:104:
+lxd:x:105:ubuntu
+_ssh:x:106:
+rdma:x:107:
+tcpdump:x:108:
+landscape:x:109:
+fwupd-refresh:x:990:
+polkitd:x:989:
+admin:x:110:
+netdev:x:111:
+_chrony:x:112:
+ubuntu:x:1000:
+docker:x:113:
+jethalal:x:1001:
+rahul:x:1002:
+rohan:x:1003:
+ravi:x:1004:
+devops:x:1005:jethalal,rahul
