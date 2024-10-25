@@ -1,0 +1,190 @@
+ubuntu@ip-172-31-4-82:~$ cd devops
+ubuntu@ip-172-31-4-82:~/devops$ chmod 777
+chmod: missing operand after ‘777’
+Try 'chmod --help' for more information.
+ubuntu@ip-172-31-4-82:~/devops$ chmod 777 devops
+chmod: cannot access 'devops': No such file or directory
+ubuntu@ip-172-31-4-82:~/devops$ cd ..
+ubuntu@ip-172-31-4-82:~$ chmod 777 devops
+ubuntu@ip-172-31-4-82:~$ cd devops
+ubuntu@ip-172-31-4-82:~/devops$ ls -l
+total 0
+-rw-rw-r-- 1 ubuntu ubuntu 0 Oct 23 14:49 newfle.txt
+ubuntu@ip-172-31-4-82:~/devops$ cd ..
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 24
+drwxrwxr-x 3 ubuntu ubuntu 4096 Oct 23 15:54 cloud
+-rw-rw-r-- 1 ubuntu ubuntu    6 Oct 23 14:41 demofile.txt
+drwxrwxrwx 2 ubuntu ubuntu 4096 Oct 23 14:49 devops
+-rw-rw-r-- 1 ubuntu ubuntu   61 Oct 24 06:24 newfile.txt
+-rw-rw-r-- 1 ubuntu ubuntu    0 Oct 23 14:34 newfle.txt
+-rw------- 1 ubuntu ubuntu  372 Oct 24 06:52 nohup.out
+-rw-rw-r-- 1 ubuntu ubuntu    9 Oct 23 14:42 tempfile.txt
+ubuntu@ip-172-31-4-82:~$ chmod 664 demofile.txt
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 24
+drwxrwxr-x 3 ubuntu ubuntu 4096 Oct 23 15:54 cloud
+-rw-rw-r-- 1 ubuntu ubuntu    6 Oct 23 14:41 demofile.txt
+drwxrwxrwx 2 ubuntu ubuntu 4096 Oct 23 14:49 devops
+-rw-rw-r-- 1 ubuntu ubuntu   61 Oct 24 06:24 newfile.txt
+-rw-rw-r-- 1 ubuntu ubuntu    0 Oct 23 14:34 newfle.txt
+-rw------- 1 ubuntu ubuntu  372 Oct 24 06:52 nohup.out
+-rw-rw-r-- 1 ubuntu ubuntu    9 Oct 23 14:42 tempfile.txt
+ubuntu@ip-172-31-4-82:~$ chmod 700 demofile.txt
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 24
+drwxrwxr-x 3 ubuntu ubuntu 4096 Oct 23 15:54 cloud
+-rwx------ 1 ubuntu ubuntu    6 Oct 23 14:41 demofile.txt
+drwxrwxrwx 2 ubuntu ubuntu 4096 Oct 23 14:49 devops
+-rw-rw-r-- 1 ubuntu ubuntu   61 Oct 24 06:24 newfile.txt
+-rw-rw-r-- 1 ubuntu ubuntu    0 Oct 23 14:34 newfle.txt
+-rw------- 1 ubuntu ubuntu  372 Oct 24 06:52 nohup.out
+-rw-rw-r-- 1 ubuntu ubuntu    9 Oct 23 14:42 tempfile.txt
+ubuntu@ip-172-31-4-82:~$ umask
+0002
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 24
+drwxrwxr-x 3 ubuntu ubuntu 4096 Oct 23 15:54 cloud
+-rwx------ 1 ubuntu ubuntu    6 Oct 23 14:41 demofile.txt
+drwxrwxrwx 2 ubuntu ubuntu 4096 Oct 23 14:49 devops
+-rw-rw-r-- 1 ubuntu ubuntu   61 Oct 24 06:24 newfile.txt
+-rw-rw-r-- 1 ubuntu ubuntu    0 Oct 23 14:34 newfle.txt
+-rw------- 1 ubuntu ubuntu  372 Oct 24 06:52 nohup.out
+-rw-rw-r-- 1 ubuntu ubuntu    9 Oct 23 14:42 tempfile.txt
+ubuntu@ip-172-31-4-82:~$ sudo chown jethalal demofile.txt
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 24
+drwxrwxr-x 3 ubuntu   ubuntu 4096 Oct 23 15:54 cloud
+-rwx------ 1 jethalal ubuntu    6 Oct 23 14:41 demofile.txt
+drwxrwxrwx 2 ubuntu   ubuntu 4096 Oct 23 14:49 devops
+-rw-rw-r-- 1 ubuntu   ubuntu   61 Oct 24 06:24 newfile.txt
+-rw-rw-r-- 1 ubuntu   ubuntu    0 Oct 23 14:34 newfle.txt
+-rw------- 1 ubuntu   ubuntu  372 Oct 24 06:52 nohup.out
+-rw-rw-r-- 1 ubuntu   ubuntu    9 Oct 23 14:42 tempfile.txt
+ubuntu@ip-172-31-4-82:~$ zip
+Command 'zip' not found, but can be installed with:
+sudo apt install zip
+ubuntu@ip-172-31-4-82:~$ sudo apt zip
+E: Invalid operation zip
+ubuntu@ip-172-31-4-82:~$ sudo apt install zip
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  bridge-utils containerd dns-root-data dnsmasq-base pigz runc ubuntu-fan
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  unzip
+The following NEW packages will be installed:
+  unzip zip
+0 upgraded, 2 newly installed, 0 to remove and 12 not upgraded.
+Need to get 350 kB of archives.
+After this operation, 933 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 unzip amd64 6.0-28ubuntu4.1 [174 kB]
+Get:2 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 zip amd64 3.0-13build1 [175 kB]
+Fetched 350 kB in 0s (16.6 MB/s)
+Selecting previously unselected package unzip.
+(Reading database ... 98587 files and directories currently installed.)
+Preparing to unpack .../unzip_6.0-28ubuntu4.1_amd64.deb ...
+Unpacking unzip (6.0-28ubuntu4.1) ...
+Selecting previously unselected package zip.
+Preparing to unpack .../zip_3.0-13build1_amd64.deb ...
+Unpacking zip (3.0-13build1) ...
+Setting up unzip (6.0-28ubuntu4.1) ...
+Setting up zip (3.0-13build1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...
+Scanning candidates...
+Scanning linux images...
+
+Pending kernel upgrade!
+Running kernel version:
+  6.8.0-1016-aws
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 6.8.0-1017-aws.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting.
+
+Restarting services...
+
+Service restarts being deferred:
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@ip-172-31-4-82:~$ ls -l
+total 24
+drwxrwxr-x 3 ubuntu   ubuntu 4096 Oct 23 15:54 cloud
+-rwx------ 1 jethalal ubuntu    6 Oct 23 14:41 demofile.txt
+drwxrwxrwx 2 ubuntu   ubuntu 4096 Oct 23 14:49 devops
+-rw-rw-r-- 1 ubuntu   ubuntu   61 Oct 24 06:24 newfile.txt
+-rw-rw-r-- 1 ubuntu   ubuntu    0 Oct 23 14:34 newfle.txt
+-rw------- 1 ubuntu   ubuntu  372 Oct 24 06:52 nohup.out
+-rw-rw-r-- 1 ubuntu   ubuntu    9 Oct 23 14:42 tempfile.txt
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cd cloud
+ubuntu@ip-172-31-4-82:~/cloud$ ls
+linux_for_devops
+ubuntu@ip-172-31-4-82:~/cloud$ cd ..
+ubuntu@ip-172-31-4-82:~$ zip -r lfd.zip cloud/
+  adding: cloud/ (stored 0%)
+  adding: cloud/linux_for_devops/ (stored 0%)
+  adding: cloud/linux_for_devops/newfle.txt (stored 0%)
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  lfd.zip  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cd cloud
+ubuntu@ip-172-31-4-82:~/cloud$ mkdir unzipfiles
+ubuntu@ip-172-31-4-82:~/cloud$ cd ..
+ubuntu@ip-172-31-4-82:~$ cp lfd.zip cloud/unzipfiles
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  lfd.zip  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cd cloud
+ubuntu@ip-172-31-4-82:~/cloud$ ls
+linux_for_devops  unzipfiles
+ubuntu@ip-172-31-4-82:~/cloud$ unzip lfd.zip
+unzip:  cannot find or open lfd.zip, lfd.zip.zip or lfd.zip.ZIP.
+ubuntu@ip-172-31-4-82:~/cloud$ cd ..
+ubuntu@ip-172-31-4-82:~$ unzip lfd.zip
+Archive:  lfd.zip
+replace cloud/linux_for_devops/newfle.txt? [y]es, [n]o, [A]ll, [N]one, [r]ename:
+error:  invalid response [{ENTER}]
+replace cloud/linux_for_devops/newfle.txt? [y]es, [n]o, [A]ll, [N]one, [r]ename: y
+ extracting: cloud/linux_for_devops/newfle.txt
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  lfd.zip  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ tar -xvzf
+tar: option requires an argument -- 'f'
+Try 'tar --help' or 'tar --usage' for more information.
+ubuntu@ip-172-31-4-82:~$ tar -cvzf devops
+tar: Cowardly refusing to create an empty archive
+Try 'tar --help' or 'tar --usage' for more information.
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  lfd.zip  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ tar -cvzf devops devops.tar.gz
+tar: tar (child): devops.tar.gz: Cannot stat: No such file or directory
+devops: Cannot open: Is a directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  lfd.zip  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ tar -cvzf  devops.tar.gz devops
+devops/
+devops/newfle.txt
+ubuntu@ip-172-31-4-82:~$ ls
+cloud  demofile.txt  devops  devops.tar.gz  lfd.zip  newfile.txt  newfle.txt  nohup.out  tempfile.txt
+ubuntu@ip-172-31-4-82:~$ cp devops.tar.gz cloud/
+ubuntu@ip-172-31-4-82:~$ cd cloud
+ubuntu@ip-172-31-4-82:~/cloud$ tar -xvz devops.tar.gz
+tar: Refusing to read archive contents from terminal (missing -f option?)
+tar: Error is not recoverable: exiting now
+ubuntu@ip-172-31-4-82:~/cloud$ tar -xvzf devops.tar.gz
+devops/
+devops/newfle.txt
